@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Font Control</title>
+    <style>
+      #text-input {
+        margin-bottom: 10px;
+      }
+      
+      #text {
+        font-size: 16px;
+        font-weight: normal;
+      }
+      
+      #text-container {
+        padding: 10px;
+        border: 1px solid black;
+        width: 50%;
+        margin-bottom: 10px;
+      }
+      
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      
+      #submit-button {
+        background-color: #008CBA;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="text-input">Text Color:</label>
+      <input type="text" id="text-input">
+    </div>
+    <div>
+      <label for="border-input">Border Color:</label>
+      <input type="text" id="border-input">
+      <label for="border-width-input">Border Width:</label>
+      <input type="number" id="border-width-input">
+    </div>
+    <div id="text-container">
+      <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus ante ac arcu pharetra, vitae tincidunt lacus varius.</p>
+    </div>
+    <button class="button" id="submit-button">Update</button>
+    <script>
+      const submitButton = document.getElementById("submit-button");
+      const textInput = document.getElementById("text-input");
+      const borderInput = document.getElementById("border-input");
+      const borderWidthInput = document.getElementById("border-width-input");
+      const textContainer = document.getElementById("text-container");
+      
+      submitButton.addEventListener("click", function() {
+        const textColor = textInput.value;
+        const borderColor = borderInput.value;
+        const borderWidth = borderWidthInput.value + "px";
+        
+        textContainer.style.color = textColor;
+        textContainer.style.borderColor = borderColor;
+        textContainer.style.borderWidth = borderWidth;
+      });
+    </script>
+  </body>
+</html>
